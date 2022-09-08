@@ -40,7 +40,7 @@ mongodb:
     type: ClusterIP
     port: 80
   image:
-    repository: mongodb
+    repository: mongo
     pullPolicy: IfNotPresent
     tag: "latest"
   resources:
