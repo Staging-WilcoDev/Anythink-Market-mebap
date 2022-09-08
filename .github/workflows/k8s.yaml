@@ -89,7 +89,6 @@ jobs:
     - name: 'Deploy'
       uses: 'glopezep/helm@v1.7.1'
       with:
-        release: 'app'
         chart: 'charts/app'
         release: app
         values: |
