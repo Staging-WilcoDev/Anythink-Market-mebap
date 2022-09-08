@@ -30,7 +30,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push frontend image to Amazon ECR
-        id: build-image-latest
+        id: build-image-frontend
         run: |
           docker build \
             -t ${{ steps.login-ecr.outputs.registry }}/wilco-frontend:${{ steps.set_branch.outputs.branch }}-${{ github.sha }} \
@@ -39,7 +39,7 @@ jobs:
           docker push ${{ steps.login-ecr.outputs.registry }}/wilco-frontend:${{ steps.set_branch.outputs.branch }}-${{ github.sha }}
 
       - name: Build, tag, and push backend image to Amazon ECR
-        id: build-image-latest
+        id: build-image-backend
         run: |
           docker build \
             -t ${{ steps.login-ecr.outputs.registry }}/wilco-backend:${{ steps.set_branch.outputs.branch }}-${{ github.sha }} \
