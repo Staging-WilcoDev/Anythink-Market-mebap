@@ -46,8 +46,7 @@ jobs:
             -f backend/Dockerfile \
             .
           docker push ${{ steps.login-ecr.outputs.registry }}/wilco-backend:${{ steps.set_branch.outputs.branch }}-${{ github.sha }}
-
- deploy:
+  deploy:
     name: Push updated tag
     runs-on: ubuntu-20.04
     needs: build
