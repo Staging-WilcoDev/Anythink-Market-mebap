@@ -87,11 +87,11 @@ jobs:
       id: set_branch
 
     - name: 'Deploy'
-      uses: 'deliverybot/helm@master'
+      uses: 'glopezep/helm@v1.7.1'
       with:
         release: 'app'
         chart: 'charts/app'
-        token: '${{ github.token }}'
+        release: app
         values: |
           backend:
             image:
