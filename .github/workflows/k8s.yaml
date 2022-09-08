@@ -87,7 +87,7 @@ jobs:
       id: set_branch
 
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'deliverybot/helm@master'
       with:
         release: 'app'
         chart: 'charts/app'
