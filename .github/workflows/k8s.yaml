@@ -91,6 +91,7 @@ jobs:
       with:
         chart: 'charts/app'
         release: app
+        namespace: kuku
         values: |
           backend:
             image:
