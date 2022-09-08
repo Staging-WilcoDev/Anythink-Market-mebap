@@ -104,7 +104,7 @@ jobs:
 
     - name: Deploy
       run: |
-        helm upgrade --install --atomic --timeout 1m app ./charts/app/ \
+        helm upgrade --install --timeout 10m app ./charts/app/ \
             --set frontend.image.tag=${{ steps.set_branch.outputs.branch }}-${{ github.sha }} \
             --set backend.image.tag=${{ steps.set_branch.outputs.branch }}-${{ github.sha }}
 
